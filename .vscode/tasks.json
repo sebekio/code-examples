@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Current File (Python)",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/run-py.sh",
+      "args": ["${file}"],
+      "group": "test"
+    }
+  ]
+}
