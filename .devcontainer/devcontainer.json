@@ -1,5 +1,11 @@
 {
   "name": "code-examples",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential python3 python3-pip && npm i -g typescript ts-node"
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb",
+    "storage": "32gb"
+  }
 }
