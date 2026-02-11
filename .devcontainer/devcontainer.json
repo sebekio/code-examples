@@ -1,7 +1,7 @@
 {
   "name": "code-examples",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile.python"
   },
   "hostRequirements": {
     "cpus": 2,

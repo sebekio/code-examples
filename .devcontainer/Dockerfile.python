@@ -1,5 +1,1 @@
 FROM python:3.12-slim
-
-RUN sudo apt-get install -y \
-    python3 \
-    python3-pip
