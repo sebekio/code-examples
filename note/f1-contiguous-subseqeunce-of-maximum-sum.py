@@ -1,13 +1,19 @@
+"""
+A contiguous subsequence of a list S is a subsequence made up of consecutive
+elements of S.
 
-# **Pre-Drill recall of problem solving recipes**
-# > Recall known approaches from memory only; no reading or searching. 
-# If lookup is needed, abort drill and create a blocker-learning.
-# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+For example, if S = [5, 15, -30, 10, -5, 40, 10], then [15, -30, 10] is a
+contiguous subsequence, but [5, 15, 40] is not.
+
+Problem:
+    Input: A list of numbers a1, a2, ..., an.
+    Output: The contiguous subsequence with maximum sum.
+            (A subsequence of length zero has sum zero.)
+
+For the example above, the answer is [10, -5, 40, 10],
+which has sum 55.
 """
 
-"""
-
-# Attempt 1
 """
 Define the DP state:
 E[i] = maximum sum of a non-empty contiguous subsequence ending at index i.
