@@ -6,7 +6,26 @@
       "type": "shell",
       "command": "${workspaceFolder}/scripts/run-py.sh",
       "args": ["${file}"],
-      "group": "test"
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        {
+          "owner": "python",
+          "fileLocation": "absolute",
+          "pattern": {
+            "regexp": "^  File \"(.+)\", line (\\d+)",
+            "file": 1,
+            "line": 2
+          }
+        }
+      ]
     }
   ]
 }
