@@ -1,10 +1,11 @@
 # code-examples
 
-A single-problem drill workspace. Fast capture in `trace/`, clean artifact in `note/`.
+Shared single problem workspace between jason and trajan.
+Shared lab workspace for jason.
 
 ---
 
-## Workflow
+## Single Problem Workflow
 
 ### 1 — Paste the problem
 
