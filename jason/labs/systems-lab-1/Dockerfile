@@ -12,9 +12,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN git clone https://github.com/riscv/riscv-gnu-toolchain /tmp/riscv && \
     cd /tmp/riscv && \
     ./configure --prefix=/opt/riscv && \
-    make linux -j$(nproc) && \
+    make linux -j8 && \
     rm -rf /tmp/riscv
 
 # Set up workspace
 RUN mkdir -p /workspaces/sys-lab-1
 WORKDIR /workspaces/sys-lab-1
+
+# Dev tools stage
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gdb && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
