@@ -2,15 +2,41 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "cpp",
+            "label": "test_cpp",
             "type": "shell",
-            "command": "make cpp",
+            "command": "make test_cpp",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "test_c",
+            "type": "shell",
+            "command": "make test_c",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "riscv",
+            "type": "shell",
+            "command": "make build_riscv/cell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
             },
             "problemMatcher": ["$gcc"]
         }

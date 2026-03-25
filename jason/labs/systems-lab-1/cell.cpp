@@ -1,32 +1,24 @@
-struct Cell {
-    int value;
-    int valid;
-};
+#include "cell.hpp"
 
-void init(Cell* c) {
-    c->value = 0;
-    c->valid = 0;
+void init(Cell& c) {
+    c.value = 0;
+    c.valid = 0;
 }
 
-void set(Cell* c, int val) {
-    c->value = val;
-    c->valid = 1;
+void set(Cell& c, int val) {
+    c.value = val;
+    c.valid = 1;
 }
 
-
-int get(const Cell* c, int* out) {
-    if (!c->valid) {
+int get(const Cell& c, int& value) {
+    if (!c.valid) {
         return 0;
     }
-    *out = c->value;
+    value = c.value;
     return 1;
 }
 
-void clear(Cell* c) {
-    c->value = 0;
-    c->valid = 0;
-}
-
-int main() {
-    return 0;
+void clear(Cell& c) {
+    c.value = 0;
+    c.valid = 0;
 }

@@ -72,29 +72,54 @@ struct Cell {
 
 ## Exact Progression
 
+
+
 ### Step 1: C++
 
-Write the cleanest possible C++ version.
-- No classes.
-- No templates.
-- Just the same struct and free functions.
+Write the cleanest, most idiomatic C++ version:
+- Use references (`Cell&`, `const Cell&`) in all function signatures to express intent and safety.
+- Use `const` wherever possible for read-only access.
+- No classes, templates, or advanced C++ features—just a plain struct and free functions.
+- Avoid heap allocation and keep all state explicit.
+
+**Example signatures:**
+```cpp
+void init(Cell& c);
+void set(Cell& c, int val);
+int get(const Cell& c, int& out);
+void clear(Cell& c);
+```
 
 #### Why?
-This prevents C++ features from hiding the machine model.
+This approach demonstrates how C++ can provide safer, clearer interfaces (via references and const-correctness) while still exposing the underlying machine model. It also makes the differences with C explicit.
 
 #### What to Learn:
-How the compiler lowers simple procedural code from C++.
+How the compiler lowers idiomatic C++ code using references, and how this differs from C pointer-based code. Observe how references are implemented under the hood (as pointers), but with added type safety and clarity.
 
 ---
 
+
+
 ### Step 2: C
-Port it directly to C with identical behavior and nearly identical signatures.
+
+Port the C++ code directly to C, preserving all behavior, but use idiomatic C signatures:
+- Use pointers for all struct arguments and outputs (e.g., `Cell*`, `const Cell*`).
+- No references or const-correctness on arguments (except via `const` pointer types).
+- Keep the struct and function names identical for easy comparison.
+
+**Example signatures:**
+```c
+void init(Cell* c);
+void set(Cell* c, int val);
+int get(const Cell* c, int* out);
+void clear(Cell* c);
+```
 
 #### Why?
-Now you see what C++ added or did not add.
+This highlights the differences in expressiveness and safety between C++ (references, const) and C (pointers only). It also makes the ABI and calling convention differences visible.
 
 #### What to Compare:
-Generated assembly for C++ vs C at `-O0` and `-O2`.
+Generated assembly for C++ (using references) vs C (using pointers) at `-O0` and `-O2`.
 - For this lab, they should be very similar. That is the point.
 
 ---

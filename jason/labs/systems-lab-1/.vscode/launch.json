@@ -5,7 +5,7 @@
             "name": "Debug cell.cpp (g++)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build_cpp/cell",
+            "program": "${workspaceFolder}/build_cpp/test_cell",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build_cpp",
@@ -19,7 +19,53 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "cpp",
+            "preLaunchTask": "test_cpp",
+            "sourceFileMap": {
+                "/workspaces/sys-lab-1": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Debug cell.c (gcc)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build_c/test_cell",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build_c",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "test_c",
+            "sourceFileMap": {
+                "/workspaces/sys-lab-1": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Debug cell_rv.s (riscv64)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build_riscv/cell",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build_riscv",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/riscv/bin/riscv64-unknown-elf-gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "riscv",
             "sourceFileMap": {
                 "/workspaces/sys-lab-1": "${workspaceFolder}"
             }
